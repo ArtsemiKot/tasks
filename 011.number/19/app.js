@@ -9,12 +9,17 @@ let c = +prompt('Введите c');
 let d = b ** 2 - 4 * a * c;
 
 if (d > 0 && a != 0) {
-    console.log('x1', (-b - Math.sqrt(d)) / (2 * a));
-    console.log('x2', (b - Math.sqrt(d)) / (2 * a));
+    let x1 = ((-b - Math.sqrt(d)) / (2 * a));
+    let x2 = ((b - Math.sqrt(d)) / (2 * a));
+    if (x1 > x2) {
+        console.log(x1, x2);
+    } else {
+        console.log(x2, x1);
+    }
 } else if (d == 0 && a != 0) {
     console.log('x', (-b / (2 * a)));
 } else if (d < 0 && a != 0) {
     console.log('Нет корней');
-}else{
+} else {
     console.log('Нет решения');
 }
