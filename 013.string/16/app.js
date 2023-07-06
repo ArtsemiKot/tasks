@@ -4,6 +4,6 @@
 // Chris Alan => true
 // chris alan => false
 
-let str = prompt('Введите Имя и Фамилию').trim().split(' ');
+let str = prompt('Введите Имя и Фамилию').split(' ');
 
-console.log();
+console.log(str[0][0] === str[0][0].toUpperCase() && str[1][0] === str[1][0].toUpperCase() ? true : false);

@@ -3,4 +3,4 @@
 
 let data = 'xxxx-xx-xx';
 
-console.log(data.split('-').reverse().join('.') + '.');
+console.log(data.split('-').reverse().join('.')+ '.');
