@@ -2,4 +2,4 @@
 
 let a = prompt('Введите строку');
 
-console.log(isNaN(a)? a[0]: false);
+console.log(isNaN(a) ? a[0] : false);

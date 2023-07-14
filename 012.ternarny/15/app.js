@@ -7,12 +7,12 @@ let b = prompt('Введите второе число');
 
 if (isNaN(a) || isNaN(b)) {
     console.log('Повторите! Введите числа');
-} else {
-    if (a >0 && a < 10 && b >= 0 && b < 10) {
-        console.log(a.replace(a, 'I\'m'), b.replace(b, 'xx'));
-    }else if(a =0 && a < 10 && b >= 0 && b < 10){
-        console.log(b.replace(b, 'xx'));
-    }else{
-        console.log('Ошибка');
+} else if (a < 10 && b < 10) {
+    if (a === 0) {
+        console.log(`I'm ${b}`)
+    } else {
+        console.log(`I'm ${a}${b}`)
     }
-}
+} else {
+    console.log('Неверный диапозон')
+}    

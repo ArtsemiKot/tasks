@@ -4,12 +4,12 @@
 // 135 -> 9
 
 let a = prompt('Введите строку');
-if(isNaN(a)){
+if (isNaN(a)) {
     console.log(false);
-}else{
+} else {
     rezult = 0;
-    for(i=0; i<a.length; i++){
-        rezult ;
+    for (let i = 0; i < a.length; i++) {
+        rezult += +a[i];
     }
+    console.log(rezult);
 }
-console.log(rezult);

@@ -3,8 +3,8 @@
 
 let a = prompt('Введите строку').trim().toLowerCase();
 
-if(isNaN(a) && a==='hschool'.trim().toLowerCase()){
-        console.log(true);
-}else{
+if (isNaN(a) && a === 'hschool'.trim().toLowerCase()) {
+    console.log(true);
+} else {
     console.log(false);
 }

@@ -3,9 +3,11 @@
 // 5 -> 120 (1*2*3*4*5)
 
 let a = prompt('Введите число');
-
-if(isNaN(a)){
+let f = 1;
+if (isNaN(a)) {
     console.log(false);
-}else{
-    
+} else {
+    for (i = 1; i <= a; i++) {
+        f *= i;
+    }console.log(f);
 }

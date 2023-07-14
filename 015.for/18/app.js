@@ -6,10 +6,22 @@
 let a = 1234;
 a = '1234';
 
-for (let i = 0; i<a.length; i++) {
+for (let i = 0; i < a.length; i++) {
     if (a[i] % 2 === 0) {
-        console.log(a[i] - 'чет');
+        console.log(a[i] + '-чет');
     } else {
-        console.log(a[i] - 'неч');
+        console.log(a[i] + '-неч');
     }
 }
+
+let b = 444444;
+b = '444444';
+res = '';
+for (let i = 0; i < b.length; i++) {
+    if (b[i] % 2 === 0) {
+        res += b[i] + '-чет ';
+    } else {
+        res += b[i] + '-неч ';
+    }
+}
+console.log(res);

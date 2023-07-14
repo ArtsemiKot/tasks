@@ -4,7 +4,7 @@
 
 let a = prompt('Введите трехзначное число');
 
-if(a>99 && a<1000){
-    console.log(Number(a[0])+Number(a[1])+Number(a[2]));
-    console.log(Number(a[0])*Number(a[1])*Number(a[2]));
+if (a > 99 && a < 1000) {
+    console.log(Number(a[0]) + Number(a[1]) + Number(a[2]));
+    console.log(Number(a[0]) * Number(a[1]) * Number(a[2]));
 }
