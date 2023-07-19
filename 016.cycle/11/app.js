@@ -6,7 +6,7 @@ const arr = ['a', 1, true, 'b', [1, 2, 3], 2, 3];
 let arr_new = [];
 
 for (let i = 0; i < arr.length; i++) {
-    if (!isNaN(arr[i])) {
+    if (arr[i]===+arr[i]) {
         arr_new.push(arr[i]);
     }
 }

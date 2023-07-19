@@ -6,8 +6,9 @@ const arr = [10, 20, 30, 50, 235, 3000];
 let result_arr = [];
 
 for (let i = 0; i < arr.length; i++) {
+    arr[i] = String(arr[i]);
     if (arr[i][0] == 1 || arr[i][0] == 2 || arr[i][0] == 5) {
-        result_arr.push(arr[i])
+        result_arr.push(+arr[i])
     }
 }
 console.log(result_arr);
