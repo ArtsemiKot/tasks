@@ -15,7 +15,7 @@ for (let i = 0; i < n; i++) {
         arr_2.push(prompt());
     }
 }
-if (arr_1 === arr_2) {
+if (arr_1.join('') === arr_2.join('')) {
     console.log(true);
 } else {
     console.log(false);
