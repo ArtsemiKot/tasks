@@ -5,3 +5,16 @@
 // [1, 24, 5] -> [“нечет”, “чет”, “нечет”]
 // Использовать map
 
+const n = prompt("количество элементов массива");
+
+let arr = [];
+
+for (let i = 0; i < n; i++) {
+  let a = prompt("элемент массива");
+  !isNaN(a) ? arr.push(a) : null;
+}
+
+let result = arr.map(function (el) {
+ return el % 2 === 0 ? `${el}-чет ` : `${el}-неч `;
+});
+console.log(result);
