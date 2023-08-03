@@ -4,11 +4,11 @@
 // массив, соответственно, с числами. forEach
 
 const n = prompt('Введите количество элементов');
-let arr_Str = [];
-let arr_Num = [];
+let arr_str = [];
+let arr_num = [];
 for (let i = 0; i < n; i++) {
   let a = prompt('Введите значение массива');
-  isNaN(a) ? arr_Str.push(a) : arr_Num.push(a);
+  isNaN(a) ? arr_str.push(a) : arr_num.push(a);
 }
-console.log(arr_Str);
-console.log(arr_Num);
+console.log(arr_str);
+console.log(arr_num);
