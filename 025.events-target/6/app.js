@@ -1,4 +1,5 @@
-// Проверить на палендром
+// Вы вводите строку. Проверить является ли это
+//  слово палиндром. Добавить проверки
 
 const btn = document.querySelector('button');
 
@@ -15,7 +16,7 @@ btn.addEventListener('click', function () {
         if (inp.value === reverse) {
             div.innerHTML = 'Палендром';
         } else {
-            div.innerHTML = 'Не дури голову, вводи Палендром';
+            div.innerHTML = 'Не палендром';
         }
     } catch (error) {
         alert(error.message);
