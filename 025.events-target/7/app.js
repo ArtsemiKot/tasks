@@ -6,9 +6,7 @@ const btn = document.querySelector('.btn');
 btn.addEventListener('click', function () {
     const inp = document.querySelector('.inp');
     const td = document.querySelector('td');
-
-    const tr = document.createElement('tr')
-
+    const tr = document.createElement('tr');
     tr.innerHTML = inp.value;
     td.appendChild(tr)
 })
