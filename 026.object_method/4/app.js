@@ -2,9 +2,7 @@
 //     от 1 до n). Написать функцию на поиск в объекте только четных ключей.
 
 const n = 5;
-const obj = {
-
-};
+const obj = {};
 
 function doObj(n) {
     for (let i = 0; i < n; i++) {
