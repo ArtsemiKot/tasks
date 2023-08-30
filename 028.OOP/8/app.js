@@ -5,7 +5,7 @@
 class Validator {
     isEmail(email) {
       try {
-        if (!!/^[a-zA-Z0-9_\.\-]+@[a-z0-9]+\.[a-z]{1,3}$|^\+[0-9]{12}$/g.test(email))
+        if (!/^[a-zA-Z0-9_\.\-]+@[a-z0-9]+\.[a-z]{1,3}$/g.test(email))
           throw new Error("Введена неправильно электронная почта");
         return true;
       } catch (error) {
