@@ -11,16 +11,16 @@
 // этим массивом осуществляется только в repository. Массив находится в
 // приложении
 class Server {
-    controller() {
+    controller(data) {
         try {
-            const serv = this.service();
+            const serv = this.service(data);
             return serv;
         } catch (error) {
             return error.message;
         }
     }
     service() {
-        const rep = this.repository();
+        const rep = this.repository(data);
         return rep;
     }
     repository() {
@@ -31,6 +31,25 @@ class Server {
             { "id": 4, "email": "german@mail.ru", "pwd": "pwdqqq111" },
             { "id": 5, "email": "maria@mail.ru", "pwd": "pwd746552" }
         ];
+        const firtstered = arr.filter((el)=>el.email !==)
     }
 }
 const server = new Server();
+
+class Client {
+    sendRequest() {
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            const pwd = document.querySelector('.pwd');
+            const email = document.querySelector('.email');
+            const div = document.querySelector('div');
+            const obj = {};
+            obj.email = email.value;
+            obj.pwd = pwd.value;
+            const server = new Server();
+            div.innerHTML = JSON.stringify(obj);
+        })
+    }
+}
+const client = new Client();
+client.sendRequest();
