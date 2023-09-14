@@ -20,6 +20,6 @@ class Validator {
 }
 
 const validator = new Validator();
-validator.setEmail('ostapenko@mail.com');
+validator.setEmail('a.kot@a1.by');
 console.log(validator.getEmail());
 console.log(validator.isEmail());
