@@ -50,6 +50,6 @@ class ServerPut {
 }
 
 const serverPut = new ServerPut();
-const obj = JSON.parse(`{"id": "javascript","label": "JavaScript", "category": "programmingLanguages", "priority": 10 }`)
+const obj = JSON.parse(`{ {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`)
 const result = serverPut.controller(obj);
 console.log(result);
