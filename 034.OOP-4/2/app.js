@@ -14,7 +14,7 @@ btn.addEventListener('click', () => {
     array.push(inp.value);
     inp.value = '';
     arr.innerHTML = array;
-    
+
 
     let chetArr = [];
     let nechetArr = [];
