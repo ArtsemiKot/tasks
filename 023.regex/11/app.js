@@ -2,6 +2,6 @@
 
 const number = '1 000 000 000';
 
-const newNumber = +number.replaceAll(' ', '');
+const newNumber = +number.replaceAll(/\s/g, '');
 
-console.log(typeof(newNumber), newNumber);
+console.log(typeof (newNumber), newNumber);
