@@ -5,7 +5,7 @@
 
 
 class TodoList {
-    tasks: string;
+    tasks: {};
 
     addTask(task: string) {
         this.tasks = task;
