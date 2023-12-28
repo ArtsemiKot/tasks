@@ -3,18 +3,18 @@
 // Написать тест для функции
 
 function doPow(a, b) {
-    if(typeof a === 'string' || typeof b === 'string') return false
+    if (typeof a === 'string' || typeof b === 'string') return false
     return a ** b
 }
 
-describe('test do Pow Function', ()=>{
-    test('test to be success', ()=>{
-        const result = doPow(2,2)
+describe('test do Pow Function', () => {
+    test('test to be success', () => {
+        const result = doPow(2, 2)
         expect(result).toBe(4)
     })
 
-    test('test to be false', ()=>{
-        const result = doPow('a','b')
+    test('test to be false', () => {
+        const result = doPow('a', 'b')
         expect(result).toBeFalsy()
     })
 })
@@ -25,7 +25,7 @@ describe('test do Pow Function', ()=>{
 
 function doComposition(a, b) {
     if (typeof a != 'number' || typeof b != 'number') return false
-    if(!a || !b) return false
+    if (!a || !b) return false
     return a * b
 }
 describe('test do Composition Function', () => {
@@ -83,7 +83,7 @@ describe('test doSum Function', () => {
 
 function chekArr(arr) {
     const result = arr.filter((el) => el.count > 10 && el.producer == 'Германия')
-    if(!result.length) return false
+    if (!result.length) return false
     return result
 }
 
@@ -106,7 +106,7 @@ describe('test chekArr Function', () => {
             { id: 7, title: 'Холодильник', count: 11, price: 2400, producer: 'Германия' }]
         expect(result).toEqual(equal);
     })
-        test('test to be False', () => {
+    test('test to be False', () => {
         const result = chekArr([]);
         expect(result).toBeFalsy();
     })
@@ -147,9 +147,68 @@ describe('test chekUniq Function', () => {
 // 6. На входе статичный объект. Необходимо посчитать количество пар (ключ:
 // значение) где значение число и вывести количество. Добавить необходимые
 // проверки.
+
+function objLength(obj) {
+    if (Object.keys(obj).length == 0) return false;
+    if (typeof obj != "object") return false;
+    return Object.keys(obj).length;
+}
+
+describe("test objLength function", () => {
+    const obj = {
+        id: 1,
+        numberPhone: 231,
+        price: 10,
+    };
+
+    test("to be success", () => {
+        const res = objLength(obj);
+        expect(res).toBe(3);
+    });
+
+    test("to be falsy", () => {
+        const res = objLength({});
+        expect(res).toBeFalsy();
+    });
+
+    test("to be falsy", () => {
+        const res = objLength("kot");
+        expect(res).toBeFalsy();
+    });
+});
 // Написать тест для функции
 // 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 // Написать тест для функции
+
+function sumObjNum(obj) {
+    let res = 0;
+    for (let key in obj) {
+        if (typeof obj[key] == "number") res += obj[key];
+    }
+    if (typeof res != "number") return false;
+    return res;
+}
+
+describe("test sumObjNum function", () => {
+    const obj = {
+        id: 1,
+        name: "kot",
+        number: 10,
+        price: 40,
+    };
+
+    test("to be succses", () => {
+        const res = sumObjNum(obj);
+        expect(res).toBe(51);
+    });
+
+    test("to be falsy", () => {
+        const res = sumObjNum(25);
+        expect(res).toBeFalsy();
+    });
+});
+
+
 // 8. На входе статичный объект. Необходимо сформировать массив из всх четных
 // значений объекта.
 // Написать тест для функции
