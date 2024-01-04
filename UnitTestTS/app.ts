@@ -47,9 +47,43 @@ function capitalizeString(str: any): string {
 // 4. Напишите функцию flattenArray(array: any[]): any[], которая принимает массив, в
 // котором могут быть вложенные массивы, и возвращает новый массив, в котором
 // все элементы являются плоским списком без вложенности.
+function flattenArray(array: any[]): any {
+    try {
+      const arr: (number | string)[] = [];
+      for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] == "number" || typeof array[i] == "string") {
+          arr.push(array[i]);
+        } else {
+          arr.push(...array[i]);
+        }
+      }
+      return arr;
+    } catch (error: any) {
+      return error.message;
+    }
+  }
+  
 // 5. Напишите функцию chunkArray(array: any[], size: number): any[][], которая
 // принимает массив и число size, и возвращает новый массив, разделенный на
 // подмассивы указанного размера.
+
+function chunkArray(array: any[], size: number): any[][] {
+    try {
+      let newArr: any[] = [];
+      let sonArr: any[] = [];
+      for (let i = 0; i < array.length; i++) {
+        sonArr.push(array[i]);
+        if (sonArr.length == size) {
+          newArr.push(sonArr);
+          sonArr = [];
+        }
+      }
+      if (sonArr.length !== 0) newArr.push(sonArr);
+      return newArr;
+    } catch (error: any) {
+      return error.message;
+    }
+  }
 // 6. Напишите функцию findMissingNumber(numbers: number[]): number, которая
 // принимает массив чисел, в котором пропущено одно число из
 // последовательности, и возвращает пропущенное число.
@@ -113,4 +147,4 @@ class StringArray {
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
 
-export { isPalindrome, calculateFactorial, capitalizeString, StringArray }
+export { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray}

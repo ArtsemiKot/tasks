@@ -1,4 +1,4 @@
-import { isPalindrome, calculateFactorial, capitalizeString, StringArray } from './app';
+import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray } from './app';
 
 describe("test isPalindrome function", () => {
     test("to be success", () => {
@@ -58,3 +58,18 @@ describe('test StringArray class', () => {
         expect(result).toEqual(['artsemi', 'kot'])
     })
 })
+
+describe("test flattenArray", () => {
+    test("to be success", () => {
+        const result = flattenArray([1, 2, "d", ["a", 4]]);
+        expect(result).toEqual([1, 2, "d", "a", 4]);
+    });
+});
+
+describe("test chunkArray function", () => {
+    test("to be success", () => {
+      let size = 5;
+      const result = chunkArray([1, 2, 3, 4, 5, 6], size);
+      expect(result).toEqual([[1, 2, 3, 4, 5], [6]]);
+    });
+  });
