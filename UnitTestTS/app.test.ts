@@ -1,4 +1,4 @@
-import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray } from './app';
+import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum } from './app';
 
 describe("test isPalindrome function", () => {
     test("to be success", () => {
@@ -68,8 +68,27 @@ describe("test flattenArray", () => {
 
 describe("test chunkArray function", () => {
     test("to be success", () => {
-      let size = 5;
-      const result = chunkArray([1, 2, 3, 4, 5, 6], size);
-      expect(result).toEqual([[1, 2, 3, 4, 5], [6]]);
+        let size = 5;
+        const result = chunkArray([1, 2, 3, 4, 5, 6], size);
+        expect(result).toEqual([[1, 2, 3, 4, 5], [6]]);
     });
-  });
+});
+
+describe("test findMissingNumber function", () => {
+    test("test get findMissingNumber", () => {
+        const res = findMissingNumber([1, 2, 3, 4, 5, 7, 8, 9, 10]);
+        expect(res).toBe(6);
+    });
+});
+
+describe("test findPairWithSum", () => {
+    test("test tobe findPairWithSum", () => {
+        const res = findPairWithSum([1, 2, 3, 4, 5], 5);
+        expect(res).toEqual([4, 1]);
+    });
+
+    test("return empty", () => {
+        const res = findPairWithSum([], 5);
+        expect(res).toBe("empty");
+    });
+});
