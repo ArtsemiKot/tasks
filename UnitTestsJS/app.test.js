@@ -212,6 +212,41 @@ describe("test sumObjNum function", () => {
 // 8. На входе статичный объект. Необходимо сформировать массив из всх четных
 // значений объекта.
 // Написать тест для функции
+
+function chetArr(obj) {
+    const arr = [];
+    for (let key in obj) {
+        if (typeof obj[key] == 'string') return false;
+        if (obj[key] % 2 === 0) {
+            arr.push(obj[key]);
+        }
+    }
+    return arr;
+}
+
+describe('test chetArr', () => {
+    const obj = {
+        id: 1,
+        age: 2,
+        year: 3
+    }
+
+    test('Возвращает Success', () => {
+        const result = chetArr(obj)
+        expect(result).toStrictEqual([2])
+    })
+
+    test('Вовзращает False', () => {
+        const result = chetArr({
+            id: 1,
+            age: 'd',
+            year: 3
+        });
+        expect(result).toBeFalsy();
+    })
+})
+
+
 // 9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
 // разбить данный одномерный массив на маленькие массивы в зависимости от
 // того, какого число ввел пользователь. Добавить необходимые проверки.
@@ -222,6 +257,31 @@ describe("test sumObjNum function", () => {
 // 5 -> [[1, 2, 3, 4, 5], [6]]
 // 6 -> [[1, 2, 3, 4, 5, 6]]
 // Написать тест для функции
+
+function arraySum(arr) {
+    let n = 5;
+    let dadArr = [];
+    let sonArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        dadArr.push(arr[i]);
+        if (dadArr.length == n) {
+            sonArr.push(dadArr)
+            dadArr = [];
+        }
+    }
+    if (dadArr.length !== 0) {
+        sonArr.push(dadArr);
+    }
+    return sonArr;
+}
+
+describe('test arraySum function', () => {
+    const arr = [1, 2, 3, 4, 5, 6]
+    test('test возвращает success', () => {
+        const result = arraySum(arr);
+        expect(result).toEqual([[1, 2, 3, 4, 5], [6]]);
+    })
+})
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и
 // возвращает массив без каких-либо элементов с одинаковым значением рядом
 // друг с другом.
