@@ -164,6 +164,28 @@ class StringArray {
 // методы:
 // getSum(): number - возвращает сумму всех чисел в массиве.
 // getEvenNumbers(): number[] - возвращает массив только четных чисел из массива.
+class NumberArray {
+  array: number[] = [];
+
+  getSum(): number {
+    try {
+      if (!this.array.length) throw new Error("Empty");
+      return this.array.reduce((sum: number, el: number) => sum + el, 0);
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  getEvenNumbers(): number[] {
+    try {
+      if (!this.array.length) throw new Error("Empty");
+      return this.array.filter((el: number) => el % 2 == 0);
+    } catch (error) {
+      return error.message;
+    }
+  }
+}
+
 // 10. Создайте класс PersonArray, который имеет свойство array (массив объектов
 // Person) и методы:
 // getNames(): string[] - возвращает массив имен всех людей.
@@ -182,4 +204,4 @@ class StringArray {
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
 
-export { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum }
+export { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum, NumberArray }

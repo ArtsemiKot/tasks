@@ -1,4 +1,4 @@
-import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum } from './app';
+import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum, NumberArray } from './app';
 
 describe("test isPalindrome function", () => {
     test("to be success", () => {
@@ -92,3 +92,33 @@ describe("test findPairWithSum", () => {
         expect(res).toBe("empty");
     });
 });
+
+describe("test NumberArray", () => {
+    test("test get NumberArray", () => {
+      const numberArray = new NumberArray();
+      numberArray.array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const res = numberArray.getSum();
+      expect(res).toBe(45);
+    });
+  
+    test("test get NumberArray", () => {
+      const numberArray = new NumberArray();
+      numberArray.array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const res = numberArray.getEvenNumbers();
+      expect(res).toEqual([2, 4, 6, 8]);
+    });
+  
+    test("test get NumberArray", () => {
+      const numberArray = new NumberArray();
+      numberArray.array = [];
+      const res = numberArray.getEvenNumbers();
+      expect(res).toBe("Empty");
+    });
+  
+    test("test get NumberArray", () => {
+      const numberArray = new NumberArray();
+      numberArray.array = [];
+      const res = numberArray.getSum();
+      expect(res).toBe("Empty");
+    });
+  });

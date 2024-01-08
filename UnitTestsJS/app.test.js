@@ -297,3 +297,32 @@ describe('test arraySum function', () => {
 // { id: 5, title: 'Планшет', count: 22, price: 2100, producer: 'Китай' },
 // { id: 6, title: 'Телевизор', count: 4, price: 4100, producer: 'Германия' },
 // { id: 7, title: 'Холодильник', count: 11, price: 2400, producer: 'Германия' } ]
+
+function newArrStr(str) {
+    if (!isNaN(str)) return false;
+    const resArr = [];
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] != resArr[resArr.length - 1]) resArr.push(str[i]);
+    }
+    return resArr;
+  }
+  
+  describe("test newArrStr function", () => {
+    const str = "AAAABBBCCDAABBB";
+  
+    test("to be falsy", () => {
+      const res = newArrStr(4);
+      expect(res).toBeFalsy();
+    });
+  
+    test("toEqual", () => {
+      const res = newArrStr(str);
+      const equal = ["A", "B", "C", "D", "A", "B"];
+      expect(res).toEqual(equal);
+    });
+  
+    test("test toGaveLength", () => {
+      const res = newArrStr(str);
+      expect(res).toHaveLength(6);
+    });
+  });
