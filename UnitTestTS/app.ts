@@ -191,10 +191,72 @@ class NumberArray {
 // getNames(): string[] - возвращает массив имен всех людей.
 // getAdults(): Person[] - возвращает массив только совершеннолетних людей.
 // getAverageAge(): number - возвращает средний возраст всех людей.
+
+interface iPerson {
+  name: string;
+  age: number;
+}
+
+class PersonArray {
+  array: iPerson[] = [
+    {
+      name: "Artsemi",
+      age: 25,
+    },
+    {
+      name: "Chris",
+      age: 24,
+    },
+    {
+      name: "Kisha",
+      age: 24,
+    },
+  ];
+
+  getNames(): string[] {
+    const res: string[] = [];
+    for (let i = 0; i < this.array.length; i++) {
+      res.push(this.array[i].name);
+    }
+    return res;
+  }
+
+  getAdults(): iPerson[] {
+    const res: iPerson[] = [];
+    for (let i = 0; i < this.array.length; i++) {
+      if (this.array[i].age > 17) res.push(this.array[i]);
+    }
+    return res;
+  }
+
+  getAverageAge(): number {
+    return this.array.reduce(
+      (sum: number, el: iPerson) => sum + el.age / this.array.length,
+      0
+    );
+  }
+}
 // 11. Создайте класс StringManipulator, который имеет свойство text (строка) и методы:
 // getCharacterCount(): number - возвращает количество символов в тексте.
 // getWords(): string[] - возвращает массив слов из текста.
 // getReversedText(): string - возвращает текст в обратном порядке.
+
+class StringManipulator {
+  text: string = "Hello JS Developer";
+
+  getCharacterCount(): number {
+    return this.text.length;
+  }
+
+  getWords(): string[] {
+    return this.text.split(" ");
+  }
+
+  getReversedText(): string {
+    return this.text.split("").reverse().join("");
+  }
+}
+
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и
 // возвращает массив без каких-либо элементов с одинаковым значением рядом
 // друг с другом.
@@ -204,4 +266,4 @@ class NumberArray {
 // '12233’ -> [1, 2, 3]
 // Написать тест для функции
 
-export { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum, NumberArray }
+export { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum, NumberArray, PersonArray, StringManipulator }

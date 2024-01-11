@@ -1,4 +1,4 @@
-import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum, NumberArray } from './app';
+import { isPalindrome, calculateFactorial, capitalizeString, StringArray, flattenArray, chunkArray, findMissingNumber, findPairWithSum, NumberArray, PersonArray, StringManipulator } from './app';
 
 describe("test isPalindrome function", () => {
     test("to be success", () => {
@@ -120,5 +120,45 @@ describe("test NumberArray", () => {
       numberArray.array = [];
       const res = numberArray.getSum();
       expect(res).toBe("Empty");
+    });
+  });
+
+  describe("test PersonArray", () => {
+    test("test get PersonArray", () => {
+      const personArray = new PersonArray();
+      const res = personArray.getNames();
+      expect(res).toEqual(["Anton", "Vasia", "Alesha"]);
+    });
+  
+    test("test get PersonArray", () => {
+      const personArray = new PersonArray();
+      const res = personArray.getAdults();
+      expect(res).toHaveLength(2);
+    });
+  
+    test("test get PersonArray", () => {
+      const personArray = new PersonArray();
+      const res = personArray.getAverageAge();
+      expect(res).toBe(22);
+    });
+  });
+  
+  describe("test StringManipulator", () => {
+    test("test get StringManipulator", () => {
+      const stringManipulator = new StringManipulator();
+      const res = stringManipulator.getCharacterCount();
+      expect(res).toBe(15);
+    });
+  
+    test("test get StringManipulator", () => {
+      const stringManipulator = new StringManipulator();
+      const res = stringManipulator.getWords();
+      expect(res).toEqual(["Hello", "World", "All"]);
+    });
+  
+    test("test get StringManipulator", () => {
+      const stringManipulator = new StringManipulator();
+      const res = stringManipulator.getReversedText();
+      expect(res).toBe("llA dlroW olleH");
     });
   });
