@@ -1,10 +1,10 @@
 // Вы вводите значение с клавиатуры. Если значение четное, то вывести true, в
 // противном случае false
 
-let a = +prompt('Введите значение');
+const num = +prompt('Введите значение');
 
-if(a%2==0){
+if (num % 2 == 0) {
     console.log(true);
-}else{
+} else {
     console.log(false);
 }

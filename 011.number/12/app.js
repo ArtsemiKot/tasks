@@ -5,6 +5,10 @@
 // 50 => 0 час 50 минут
 // 240 => 4 час 0 минут
 
-let a = +prompt('Введите временной интервал в минутах');
+const time1 = 150;
+const time2 = 50;
+const time3 = 240;
 
-console.log(Math.trunc(a / 60), 'час', a % 60, 'минут');
+console.log(Math.trunc(time1 / 60), 'час', time1 % 60, 'минут');
+console.log(Math.trunc(time2 / 60), 'час', time2 % 60, 'минут');
+console.log(Math.trunc(time3 / 60), 'час', time3 % 60, 'минут');
